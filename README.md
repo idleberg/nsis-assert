@@ -85,7 +85,7 @@ Define these before including Assert.nsh to customize behavior.
 
 ### Fail-fast
 
-Define `__ASSERT_FAILFAST__` to abort the installer on the first failure. Sets `ErrorLevel` to 1 before calling `Abort`.
+Define `__ASSERT_FAILFAST__` to abort the installer on the first failure.
 
 ```nsis
 !define __ASSERT_FAILFAST__
