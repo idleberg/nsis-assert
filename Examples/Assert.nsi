@@ -10,7 +10,7 @@ ShowInstDetails show
 RequestExecutionLevel user
 Unicode true
 
-!include "../Include/Assert.nsh"
+!include "Assert.nsh"
 
 ; --- Compile-time assertions ---
 !define MY_VERSION "1.0.0"
