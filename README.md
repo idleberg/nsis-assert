@@ -62,8 +62,7 @@ ${AssertSummary}
 ${AssertDefined}   MY_VERSION
 ${AssertUndefined} DEPRECATED_FLAG
 ```
-
-See [examples](Examples/) for details.
+See [examples](https://github.com/idleberg/nsis-assert/tree/main/Examples) for details.
 
 ## Options
 
