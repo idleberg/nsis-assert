@@ -61,6 +61,8 @@ ${AssertDefined}   MY_VERSION
 ${AssertUndefined} DEPRECATED_FLAG
 ```
 
+See [examples](Examples/) for details.
+
 ## Options
 
 Define these before including Assert.nsh to customize behavior.
@@ -88,16 +90,6 @@ Define `__ASSERT_FAILFAST__` to abort the installer on the first failure. Sets `
 !define __ASSERT_FAILFAST__
 !include "Assert.nsh"
 ```
-
-The two options are independent — for example, full output until the first failure:
-
-```nsis
-!define __ASSERT_VERBOSITY__ 2
-!define __ASSERT_FAILFAST__
-!include "Assert.nsh"
-```
-
-See [examples](Examples/) for details.
 
 ## License
 
