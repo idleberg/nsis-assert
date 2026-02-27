@@ -2,7 +2,7 @@
 ;       Assert.nsh
 ; ---------------------
 ;
-; The MIT License (MIT)
+; The MIT License - Feel free to use, modify, and distribute this code.
 ; Copyright (c) 2026 Jan T: Sott
 ; https://github.com/idleberg/nsis-assert
 ;
