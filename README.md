@@ -8,7 +8,7 @@ A runtime assertion library for [NSIS](https://nsis.sourceforge.io/), built on t
 makensis -DINSTALLNAME=Assert installme.nsi
 ```
 
-Alternatively, copy the contents of `Include\` to `${NSISDIR}\Include\`:
+Alternatively, copy the contents of `Include\` to `${NSISDIR}\Include`:
 
 ```
 NSIS\Include\Assert.nsh
