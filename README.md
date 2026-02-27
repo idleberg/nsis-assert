@@ -1,4 +1,4 @@
-# Assert
+# Assert.nsh
 
 A runtime assertion library for [NSIS](https://nsis.sourceforge.io/), built on top of LogicLib.
 
