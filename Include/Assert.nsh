@@ -2,6 +2,8 @@
 ;       Assert.nsh
 ; ---------------------
 ;
+; The MIT License (MIT)
+;
 ; Runtime assertion library for NSIS, built on top of LogicLib.
 ;
 ; Usage:
