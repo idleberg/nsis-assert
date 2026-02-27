@@ -5,7 +5,7 @@
 ; !define __ASSERT_FAILFAST__
 
 Name "Assert.nsh Examples"
-OutFile "Assert_Examples.exe"
+OutFile "Assert.exe"
 ShowInstDetails show
 RequestExecutionLevel user
 Unicode true
