@@ -4,6 +4,8 @@ A runtime assertion library for [NSIS](https://nsis.sourceforge.io/), built on t
 
 ## Installation
 
+Clone the repository. Compile `installme.nsi` and execute it:
+
 ```powershell
 makensis -DINSTALLNAME=Assert installme.nsi
 ```
