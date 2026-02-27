@@ -3,6 +3,8 @@
 ; ---------------------
 ;
 ; The MIT License (MIT)
+; Copyright (c) 2026 Jan T: Sott
+; https://github.com/idleberg/nsis-assert
 ;
 ; Runtime assertion library for NSIS, built on top of LogicLib.
 ;
