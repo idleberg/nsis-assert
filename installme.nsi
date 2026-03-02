@@ -5,7 +5,7 @@
   !define INSTALLNAME "_installer"
 !endif
 
-# ──NSIS settings ──────────────────────────────────────────────────────────────
+# ── NSIS settings ─────────────────────────────────────────────────────────────
 
 Name "${INSTALLNAME}"
 OutFile "${INSTALLNAME}.exe"
