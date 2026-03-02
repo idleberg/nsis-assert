@@ -6,7 +6,7 @@ A runtime assertion library for [NSIS](https://nsis.sourceforge.io/), built on t
 
 Download the [latest version](https://github.com/idleberg/nsis-assert/latest) and run the installer.
 
-Alternatively, clone the respository and copy `Includes\*.nsh` to `${NSISDIR}\Includes`.
+Alternatively, clone the respository and copy `Includes\*` to `${NSISDIR}\Includes`.
 
 ## Usage
 
