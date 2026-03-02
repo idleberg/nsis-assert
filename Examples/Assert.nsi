@@ -1,8 +1,3 @@
-; Optional: control verbosity (0 = silent, 1 = errors only, 2 = all results)
-; !define __ASSERT_VERBOSITY__ 1
-
-; Optional: abort on first failure (sets ErrorLevel 1)
-; !define __ASSERT_FAILFAST__
 
 Name "Assert.nsh Examples"
 OutFile "Assert.exe"
@@ -12,75 +7,62 @@ Unicode true
 
 !include "Assert.nsh"
 
-; --- Compile-time assertions ---
-!define MY_VERSION "1.0.0"
-${AssertDefined}   MY_VERSION
+; =====================================================================
+;  Compile-time assertions
+; =====================================================================
+
+!define APP_VERSION "2.0.0"
+
+; Verify a symbol is defined at compile time
+${AssertDefined} APP_VERSION
+
+; Verify a symbol is not defined at compile time
 ${AssertUndefined} NONEXISTENT_SYMBOL
 
-Section "Binary assertions"
-  ; String equality
+; =====================================================================
+;  Runtime assertions
+; =====================================================================
+
+Section "Assert"
+
+  ; String comparison
   ${Assert} "hello" == "hello" \
-    "string equality"
-  ${Assert} "hello" != "world" \
-    "string inequality"
-  ${Assert} "" == "" \
-    "empty string equality"
+    "strings are equal"
 
-  ; Case-sensitive string equality
-  ${Assert} "Hello" S== "Hello" \
-    "case-sensitive match"
-  ${Assert} "Hello" S!= "hello" \
-      "case-sensitive mismatch"
+  ; Integer comparison
+  ${Assert} 10 > 5 \
+    "10 is greater than 5"
 
-  ; Integer comparisons
-  ${Assert} 42 == 42 \
-    "integer equality"
+  ; Variable comparison
+  StrCpy $R0 "expected"
+  ${Assert} $R0 == "expected" \
+    "variable holds expected value"
 
-  ${Assert} 1 < 10 \
-    "integer less than"
-  ${Assert} 10 > 1 \
-    "integer greater than"
-  ${Assert} 5 >= 5 \
-    "integer greater or equal"
-  ${Assert} 5 <= 5 \
-    "integer less or equal"
+  ; Unary operator (FileExists)
+  ${Assert} ${FileExists} "$EXEPATH" \
+    "installer exe exists"
 
-  ; Variable-based assertions
-  StrCpy $R0 "Hello World"
-  ${Assert} $R0 == "Hello World" \
-    "variable equality"
-  ${Assert} $R0 != "" \
-    "variable not empty"
 SectionEnd
 
-Section "Negated assertions"
+Section "AssertNot"
+
+  ; Negated string comparison
   ${AssertNot} "hello" == "world" \
     "hello is not world"
-  ${AssertNot} "" != "" \
-    "empty equals empty"
+
+  ; Negated integer comparison
   ${AssertNot} 5 > 10 \
     "5 is not greater than 10"
 
-  StrCpy $R0 "success"
-  ${AssertNot} $R0 == "failure" \
-    "result is not failure"
+  ; Negated unary operator
+  ${AssertNot} ${FileExists} "$TEMP\__nonexistent__" \
+    "nonexistent file does not exist"
+
 SectionEnd
 
-Section "Unary operators"
-  ; FileExists on the NSIS output file (always present during install)
-  ${Assert}    ${FileExists} "$EXEPATH" \
-  "installer exe exists"
-  ${AssertNot} ${FileExists} "$TEMP\__nsis_assert_nonexistent__" \
-    "nonexistent file"
-SectionEnd
+Section "AssertSummary"
 
-Section "Deliberate failures"
-  ${Assert} "hello" == "world" \
-    "hello equals world"
-  ${AssertNot} "hello" == "hello" \
-    "hello differs from hello"
-SectionEnd
-
-Section "Summary"
+  ; Print the final tally and set ErrorLevel on failure
   ${AssertSummary}
+
 SectionEnd
