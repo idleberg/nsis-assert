@@ -6,7 +6,7 @@ on:
       - "v*"
 
 env:
-  INSTALL_NAME: StrLib
+  INSTALL_NAME: Assert
 
 jobs:
   release:
