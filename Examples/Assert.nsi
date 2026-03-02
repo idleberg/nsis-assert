@@ -24,7 +24,6 @@ ${AssertUndefined} NONEXISTENT_SYMBOL
 ; =====================================================================
 
 Section "Assert"
-
   ; String comparison
   ${Assert} "hello" == "hello" \
     "strings are equal"
@@ -41,11 +40,9 @@ Section "Assert"
   ; Unary operator (FileExists)
   ${Assert} ${FileExists} "$EXEPATH" \
     "installer exe exists"
-
 SectionEnd
 
 Section "AssertNot"
-
   ; Negated string comparison
   ${AssertNot} "hello" == "world" \
     "hello is not world"
@@ -57,12 +54,9 @@ Section "AssertNot"
   ; Negated unary operator
   ${AssertNot} ${FileExists} "$TEMP\__nonexistent__" \
     "nonexistent file does not exist"
-
 SectionEnd
 
 Section "AssertSummary"
-
   ; Print the final tally and set ErrorLevel on failure
   ${AssertSummary}
-
 SectionEnd
