@@ -27,7 +27,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y nsis
 
       - name: Build installer
-        run: makensis -DINSTALLNAME=${{ env.INSTALL_NAME }} installme.nsi
+        run: makensis -DINSTALLNAME=${{ env.INSTALL_NAME }} installer.nsi
 
       - name: Create archive
         run: zip ${{ env.INSTALL_NAME }}-v${{ steps.version.outputs.version }}.zip ${{ env.INSTALL_NAME }}.exe LICENSE
