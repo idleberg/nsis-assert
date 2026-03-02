@@ -4,17 +4,9 @@ A runtime assertion library for [NSIS](https://nsis.sourceforge.io/), built on t
 
 ## Installation
 
-Clone the repository. Compile `installer.nsi` and execute it:
+Download the [latest version](https://github.com/idleberg/nsis-assert/latest) and run the installer.
 
-```powershell
-makensis -DINSTALLNAME=Assert installer.nsi
-```
-
-Alternatively, copy the contents of `Include\` to `${NSISDIR}\Include`:
-
-```
-NSIS\Include\Assert.nsh
-```
+Alternatively, clone the respository and copy `Includes\*.nsh` to `${NSISDIR}\Includes`.
 
 ## Usage
 
