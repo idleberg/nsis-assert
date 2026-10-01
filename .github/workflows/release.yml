@@ -17,14 +17,14 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Get version from tag
         id: version
         run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
 
       - name: Install NSIS
-        run: sudo apt-get update && sudo apt-get install -y nsis
+        uses: nsis-dev/setup-nsis@99783963764acafc24a5e3335ddfce26d03c20a2 # v1.2.1
 
       - name: Build installer
         run: makensis -DINSTALLNAME=${{ env.INSTALL_NAME }} installer.nsi
@@ -33,6 +33,6 @@ jobs:
         run: zip ${{ env.INSTALL_NAME }}-v${{ steps.version.outputs.version }}.zip ${{ env.INSTALL_NAME }}.exe LICENSE
 
       - name: Create release
-        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
         with:
           files: ${{ env.INSTALL_NAME }}-v${{ steps.version.outputs.version }}.zip
